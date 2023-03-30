@@ -1,6 +1,9 @@
+import About from '@component/components/About'
 import Main from '@component/components/Main'
 import Navbar from '@component/components/Navbar'
+import Skills from '@component/components/Skills'
 import Head from 'next/head'
+
 
 
 
@@ -17,6 +20,8 @@ export default function Home() {
       </Head>
      <Navbar />
      <Main/>
+     <About/>
+     <Skills/>
     </>
   )
 }
