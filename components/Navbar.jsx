@@ -4,37 +4,60 @@ import Link from "next/link";
 import { AiOutlineClose, AiOutlineMail,AiOutlineMenu } from "react-icons/ai";
 import { FaLinkedinIn, FaGithub } from "react-icons/fa";
 import { BsFillPersonLinesFill } from "react-icons/bs";
+import { useEffect } from "react";
 const Navbar = () => {
   const [nav,setNav] =useState(false)
+  const [shadow,setShadow] = useState(false)
  
 
    const handleNav = () => {
     setNav(!nav)
    }
+
+   useEffect (() => {
+   const handleShadow = () => {
+    if(window.scrollY >= 90) {
+      setShadow(true);
+    } else {
+      setShadow(false)
+    }
+   }
+
+   window.addEventListener('scroll', handleShadow)
+   },[])
+
+
+
   return (
-    <div className="fixed w-full h-20 shadow-xl z-[100]">
+    <div className= {shadow
+          ? 'fixed w-full h-20 shadow-xl z-[100] ease-in-out duration-300'
+          : 'fixed w-full h-20 z-[100]'
+      }>
       <div className="flex justify-between items-center w-full h-full px-2 2xl:px-16">
+        <Link href='/'>
         <Image
-          src="/../public/assets/navLogo.png"
+          src="/../public/assets/Untitled_logo_1_free-file.jpg"
           alt="/"
           width="125"
           height="40"
         />
+        </Link>
+      
         <div>
           <ul className="hidden md:flex">
             <Link href="/">
               <li className="ml-10 text-sm uppercase hover:border-b">Home</li>
             </Link>
-            <Link href="/">
+            <Link href="/#about">
               <li className="ml-10 text-sm uppercase hover:border-b">About</li>
             </Link>
-            <Link href="/">
+            <Link href="/#skills">
               <li className="ml-10 text-sm uppercase hover:border-b">Skills</li>
             </Link>
-            <Link href="/">
+            <Link href="/#projects">
               <li className="ml-10 text-sm uppercase hover:border-b">Projects</li>
             </Link>
-            <Link href="/">
+            <Link href="/#contact">
               <li className="ml-10 text-sm uppercase hover:border-b">Contact</li>
             </Link>
           </ul>
@@ -51,7 +74,7 @@ const Navbar = () => {
           <div>
             <div className="flex w-full items-center justify-between">
               <Image
-                src="/../public/assets/navLogo.png"
+                src="/../public/assets/Untitled_logo_1_free-file.jpg"
                 height="35"
                 width="87"
                 alt="/"
@@ -69,19 +92,19 @@ const Navbar = () => {
           <div className="py-4 flex flex-col">
             <ul className="uppercase">
               <Link href="/">
-                <li className="py-4 text-sm">Home</li>
+                <li onClick={() => setNav(false)} className="py-4 text-sm">Home</li>
               </Link>
-              <Link href="/">
-                <li className="py-4 text-sm">About</li>
+              <Link href="/#about">
+                <li onClick={() => setNav(false)}  className="py-4 text-sm">About</li>
               </Link>
-              <Link href="/">
-                <li className="py-4 text-sm">Skills</li>
+              <Link href="/#skills">
+                <li onClick={() => setNav(false)}  className="py-4 text-sm">Skills</li>
               </Link>
-              <Link href="/">
-                <li className="py-4 text-sm">Projects</li>
+              <Link href="/#projects">
+                <li onClick={() => setNav(false)}  className="py-4 text-sm">Projects</li>
               </Link>
-              <Link href="/">
-                <li className="py-4 text-sm">Contact</li>
+              <Link href="/#contact">
+                <li onClick={() => setNav(false)}  className="py-4 text-sm">Contact</li>
               </Link>
             </ul>
             <div className="pt-10">
