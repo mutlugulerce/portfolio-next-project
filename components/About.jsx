@@ -6,9 +6,9 @@ const About = () => {
     <div id='about' className="w-full md:h-screen p-2 flex items-center py-16">
       <div className="max-w-[1240px] m-auto md:grid grid-cols-3 gap-8">
         <div className="col-span-2">
-          <p className='uppercase text-xl tracking-widest text-[#5651e5]'>About</p>
-          <h2 className='py-4'>Who I Am?</h2>
-          <p className='py-2 text-gray-600' >
+          <p className='uppercase text-xl tracking-widest text-white'>About</p>
+          <h2 className='py-4 '>Who I Am?</h2>
+          <p className='py-2 text-white' >
            
             I specialize in building mobile responsive front-end UI applications
             that connect with API’s and other backend technologies. I’m
@@ -19,13 +19,13 @@ const About = () => {
             needed. I believe that being a great developer is not using one
             specific language, but choosing the best tool for the job.
           </p>
-          <p className='py-2 text-gray-600'>
+          <p className='py-2 text-white'>
           I have been taking front-end developer courses since 2022 and I am learning new things for myself every day.
 
 HTML,Css,Javascript,React,Redux,Redux Toolkit,Next Some important skills I've gained so far.
 Keep learning every day
           </p>
-          <p className='py-2 text-gray-600 underline cursor-pointer'>
+          <p className='py-2 text-white underline cursor-pointer'>
               Check out some of my latest projects.
             </p>
         </div>
